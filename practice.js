@@ -177,10 +177,17 @@ var user1 = {
 that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
+for(var prop in user1) {
+  if(!user1[prop]) {
+    delete user1[prop];
+  }
+}
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
+user1.name = "Mike";
+user1.username = "mike.chi4";
 
 
 
@@ -205,10 +212,13 @@ var user2 = {
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
   //Code Here
+user2.name = 'Tyler S. McGinnis';
+user2.email = 'tyler.mcginnis@devmounta.in';
 
 //Now call the sayName method that's on the user object which will alert the users email
 
   //Code Here
+user2.sayName();
 
 
 
@@ -221,17 +231,26 @@ var user2 = {
 //Create an empty object called methodCollection.
 
   //Code Here
-
+var methodCollection = {};
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
 
+methodCollection.alertHello = function() {
+  alert("hello");
+};
+methodCollection.logHello = function() {
+  console.log("hello");
+};
+
 //Now call your alertHello and logHello methods.
 
   //Code Here
 
+methodCollection.alertHello();
+methodCollection.logHello();
 
 
 //NEXT PROBLEM
@@ -243,6 +262,14 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
   //Code Here
 
+function makePerson(name, birthday, ssn) {
+  var person = {};
+  person.name = name;
+  person.birthday = birthday;
+  person.ssn = ssn;
+
+  return person;
+}
 
 
 //NEXT PROBLEM
@@ -252,6 +279,14 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called makeCard which takes in cardNumber, expirationDate, and securityCode to make a Credit Card object and returns that object so that whenever you invoke makeCard, you get a brand new credit card.
 
   //Code Here
+function makeCard(cardNumber, expirationDate, securityCode) {
+  var creditCard = {};
+  creditCard.cardNumber = cardNumber;
+  creditCard.expirationDate = expirationDate;
+  creditCard.securityCode = securityCode;
+
+  return creditCard;
+}
 
 
 
@@ -265,3 +300,15 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 */
 
   //Code Here
+
+  function bindCard(makePerson, makeCard) {
+    var card = {};
+    for(var prop in makePerson) {
+      card[prop] = makePerson[prop];
+    };
+    for(var prop in makeCard) {
+      card[prop] = makeCard[prop];
+    };    
+ 
+    return card;
+  }
