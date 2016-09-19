@@ -58,17 +58,24 @@ that is named color, with the value being the color of your backpack. */
 
   //Code here
 
+var backPack = {};
+ var item = 'firstPocket';
+backPack['firstPocket'] = 'chapstick';
+backPack.color = "blue";
+
+
+
 //After you do the above, alert your entire backPack object.
 
   //Code here
-
+alert(backPack);
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
   //Code here
 
-
+console.log(backPack);
 
 
 //NEXT PROBLEM
@@ -79,11 +86,21 @@ Instead, console.log your whole backPack object and then check out the console. 
 //Create an 'alsoMe' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
   //Code Here
-
+var alsoMe = {
+  name: "Mike",
+  age: 27,
+  height: "5\'7\"",
+  gender: "Male",
+  married: false,
+  eyeColor: "Brown",
+  hairColor: "Black"
+};
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
   //Code Here
-
+for(var prop in alsoMe) {
+  alert(prop + ": " + alsoMe[prop]);
+}
 
 
 
@@ -96,9 +113,21 @@ Instead, console.log your whole backPack object and then check out the console. 
 
   //Code Here
 
+var album = {
+  "Track 1": 3.00,
+  "Track 2": 4.30,
+  "Track 3": 3.33,
+  "Track 4": 4.00,
+  "Track 5": 5.00
+};
+
 //Now, loop through your album object alerting every song title individually.
 
   //Code Here
+
+for(var prop in album) {
+  alert(prop);
+}
 
 
 
@@ -112,10 +141,22 @@ Instead, console.log your whole backPack object and then check out the console. 
 
   //Code Here
 
+var states = {
+  "MD": 10000,
+  "PA": 20000,
+  "UT": 30000,
+  "WA": 40000,
+  "CA": 50000
+};
+
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
-
+for(var prop in states){
+  if(states[prop] > 30000) {
+    alert(prop);
+  }
+}
 
 
 
